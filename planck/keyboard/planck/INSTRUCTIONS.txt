@@ -1,0 +1,6 @@
+run the following:
+
+make clean
+make KEYMAP=default
+** reset the keyboard, then **
+make dfu
