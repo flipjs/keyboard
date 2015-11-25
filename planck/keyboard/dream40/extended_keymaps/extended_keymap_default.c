@@ -9,7 +9,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 {KC_ESC,  KC_Q,    KC_W,    KC_E,     KC_R,    KC_T,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC},
 {FUNC(5),  KC_A,    KC_S,    KC_D,     KC_F,    KC_G,   KC_H,    KC_J,    KC_K,    KC_L,    KC_NO,   KC_ENT},
 {KC_LSFT, KC_Z,    KC_X,     KC_C,     KC_V,    KC_B,   KC_N,    KC_M,    KC_NO,   KC_COMM, KC_DOT,  KC_RSFT},
-{KC_LGUI, KC_LALT, KC_LCTL,  KC_SPC,   KC_NO,   KC_NO,  FUNC(2), KC_NO,   FUNC(1), KC_NO,   FUNC(7), FUNC(12)}
+{KC_LALT, KC_LGUI, KC_LCTL,  KC_SPC,   KC_NO,   KC_NO,  FUNC(6), KC_NO,   FUNC(8), KC_NO,   FUNC(7), FUNC(10)}
 },
 
 [1] = { /* Cursor */
@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 {KC_TRNS, KC_SLSH, KC_1, KC_2,    KC_3,  S(KC_8),   S(KC_QUOT), S(KC_9),    S(KC_0),    S(KC_GRV),  KC_BSLS, KC_TRNS},
 {KC_TRNS, KC_MINS, KC_4, KC_5,    KC_6,  S(KC_EQL), KC_QUOT,    S(KC_LBRC), S(KC_RBRC), S(KC_SLSH), KC_NO,   KC_TRNS},
 {KC_TRNS, KC_EQL,  KC_7, KC_8,    KC_9,  KC_GRV,    KC_LBRC,    KC_RBRC,    KC_NO,      S(KC_SCLN), KC_SCLN, KC_TRNS},
-{KC_TRNS, KC_TRNS, KC_TRNS, KC_0, KC_NO, KC_NO,     KC_DOT,     KC_NO,      KC_TRNS,    KC_NO,      KC_TRNS, KC_TRNS}
+{KC_TRNS, KC_TRNS, KC_TRNS, KC_0, KC_NO, KC_NO,     KC_TRNS,     KC_NO,      KC_TRNS,    KC_NO,      KC_TRNS, KC_TRNS}
 },
 
 [4] = { /* Function */
@@ -56,8 +56,9 @@ const uint16_t PROGMEM fn_actions[] = {
     [5] = ACTION_LAYER_TAP_KEY(3, KC_TAB),                                // TabFn Number
     [6] = ACTION_LAYER_TAP_KEY(2, KC_SPC),                                // SpaceFn Punctuation
     [7] = ACTION_LAYER_TAP_KEY(4, KC_PAUS),                               // PauseFn Function
-    [8] = ACTION_LAYER_TAP_KEY(5, KC_ESC),                                // EscFn Mouse
+    [8] = ACTION_LAYER_TAP_KEY(1, KC_COMM),                                // CommaFn Cursor
     [9] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_TAB),                          // Hold=Ctrl, Tap=Tab
+    [10] = ACTION_MODS_TAP_KEY(MOD_LCTL|MOD_LSFT|MOD_LALT, KC_DOT),       // Hold=Ctrl+Alt+Shift, Tap=Dot
     [11] = ACTION_MODS_TAP_KEY(MOD_LCTL|MOD_LALT, KC_ESC),                // Hold=Ctrl+Alt, Tap=Esc
     [12] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_MUTE),                        // Hold=Ctrl, Tap=Mute
     [13] = ACTION_MODS(MOD_LCTL|MOD_LSFT|MOD_LALT),                       // Ctrl+Shift+Alt
