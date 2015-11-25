@@ -6,33 +6,31 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [0] = { /* Qwerty */
-{FUNC(8),  KC_Q,    KC_W,    KC_E,     KC_R,    KC_T,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC},
+{KC_ESC,  KC_Q,    KC_W,    KC_E,     KC_R,    KC_T,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC},
 {FUNC(5),  KC_A,    KC_S,    KC_D,     KC_F,    KC_G,   KC_H,    KC_J,    KC_K,    KC_L,    KC_NO,   KC_ENT},
 {KC_LSFT, KC_Z,    KC_X,     KC_C,     KC_V,    KC_B,   KC_N,    KC_M,    KC_NO,   KC_COMM, KC_DOT,  KC_RSFT},
-{KC_LALT, KC_LGUI, KC_LCTL,  KC_SPC,   KC_NO,   KC_NO,  FUNC(6), KC_NO,   FUNC(1), KC_NO,   FUNC(7), FUNC(12)}
+{KC_LGUI, KC_LALT, KC_LCTL,  KC_SPC,   KC_NO,   KC_NO,  FUNC(2), KC_NO,   FUNC(1), KC_NO,   FUNC(7), FUNC(12)}
 },
 
 [1] = { /* Cursor */
 {KC_TRNS, KC_BSPC, KC_NO,   KC_UP,   KC_NO,   KC_HOME, KC_PGUP, KC_NO,   KC_UP,   KC_NO,   FUNC(15), FUNC(14)},
 {KC_TRNS, KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,    KC_TRNS},
-{KC_TRNS, KC_DEL,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_TRNS},
+{KC_TRNS, KC_DEL,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_DEL},
 {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   KC_TRNS, KC_NO,   KC_TRNS, KC_NO,   KC_TRNS,  KC_TRNS}
 },
-
-
 
 [2] = { /* Punctuation */
 {KC_TRNS, KC_SLSH, S(KC_1), S(KC_2),    S(KC_3),    S(KC_8),   S(KC_QUOT), S(KC_9),    S(KC_0),    S(KC_GRV),  KC_BSLS, KC_TRNS},
 {KC_TRNS, KC_MINS, S(KC_4), S(KC_5),    S(KC_6),    S(KC_EQL), KC_QUOT,    S(KC_LBRC), S(KC_RBRC), S(KC_SLSH), KC_NO,   KC_TRNS},
-{KC_TRNS, KC_EQL,  S(KC_7), S(KC_BSLS), S(KC_MINS), KC_GRV,    KC_LBRC,    KC_RBRC,    KC_NO,      S(KC_SCLN), KC_SCLN, KC_DEL},
+{KC_TRNS, KC_EQL,  S(KC_7), S(KC_BSLS), S(KC_MINS), KC_GRV,    KC_LBRC,    KC_RBRC,    KC_NO,      S(KC_SCLN), KC_SCLN, KC_TRNS},
 {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_NO,      KC_NO,     KC_TRNS,    KC_NO,      KC_TRNS,    KC_NO,      KC_TRNS, KC_TRNS}
 },
 
 [3] = { /* Number */
-{KC_TRNS, KC_SLSH, KC_1,    KC_2, KC_3,  S(KC_8),   S(KC_SCLN), S(KC_QUOT), S(KC_9),    S(KC_0),    KC_BSLS, KC_TRNS},
-{KC_TRNS, KC_MINS, KC_4,    KC_5, KC_6,  S(KC_EQL), KC_SCLN,    KC_QUOT,    S(KC_LBRC), S(KC_RBRC), KC_NO,   KC_TRNS},
-{KC_TRNS, KC_EQL,  KC_7,    KC_8, KC_9,  S(KC_MINS),S(KC_GRV),  KC_GRV,     KC_NO,      KC_LBRC,    KC_RBRC, KC_DEL},
-{KC_TRNS, KC_TRNS, KC_TRNS, KC_0, KC_NO, KC_NO,      KC_SPC, KC_NO, KC_TRNS, KC_NO, KC_TRNS, KC_TRNS}
+{KC_TRNS, KC_SLSH, KC_1, KC_2,    KC_3,  S(KC_8),   S(KC_QUOT), S(KC_9),    S(KC_0),    S(KC_GRV),  KC_BSLS, KC_TRNS},
+{KC_TRNS, KC_MINS, KC_4, KC_5,    KC_6,  S(KC_EQL), KC_QUOT,    S(KC_LBRC), S(KC_RBRC), S(KC_SLSH), KC_NO,   KC_TRNS},
+{KC_TRNS, KC_EQL,  KC_7, KC_8,    KC_9,  KC_GRV,    KC_LBRC,    KC_RBRC,    KC_NO,      S(KC_SCLN), KC_SCLN, KC_TRNS},
+{KC_TRNS, KC_TRNS, KC_TRNS, KC_0, KC_NO, KC_NO,     KC_DOT,     KC_NO,      KC_TRNS,    KC_NO,      KC_TRNS, KC_TRNS}
 },
 
 [4] = { /* Function */
@@ -61,7 +59,7 @@ const uint16_t PROGMEM fn_actions[] = {
     [8] = ACTION_LAYER_TAP_KEY(5, KC_ESC),                                // EscFn Mouse
     [9] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_TAB),                          // Hold=Ctrl, Tap=Tab
     [11] = ACTION_MODS_TAP_KEY(MOD_LCTL|MOD_LALT, KC_ESC),                // Hold=Ctrl+Alt, Tap=Esc
-    [12] = ACTION_MODS_TAP_KEY(MOD_LCTL|MOD_LSFT|MOD_LALT, KC_MUTE),      // Hold=Ctrl+Shift+Alt, Tap=Mute
+    [12] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_MUTE),                        // Hold=Ctrl, Tap=Mute
     [13] = ACTION_MODS(MOD_LCTL|MOD_LSFT|MOD_LALT),                       // Ctrl+Shift+Alt
     [14] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT, KC_DEL),                    // Ctrl+Alt+Del
     [15] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT, KC_INS),                    // Ctrl+Alt+Ins
