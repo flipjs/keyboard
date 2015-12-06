@@ -56,9 +56,9 @@ const uint16_t PROGMEM fn_actions[] = {
     [5] = ACTION_LAYER_TAP_KEY(3, KC_TAB),                                // TabFn Number
     [6] = ACTION_LAYER_TAP_KEY(2, KC_SPC),                                // SpaceFn Punctuation
     [7] = ACTION_LAYER_TAP_KEY(4, KC_PAUS),                               // PauseFn Function
-    [8] = ACTION_LAYER_TAP_KEY(1, KC_COMM),                                // CommaFn Cursor
+    [8] = ACTION_LAYER_TAP_KEY(1, KC_SLSH),                               // SlashFn Cursor
     [9] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_TAB),                          // Hold=Ctrl, Tap=Tab
-    [10] = ACTION_MODS_TAP_KEY(MOD_LCTL|MOD_LSFT|MOD_LALT, KC_DOT),       // Hold=Ctrl+Alt+Shift, Tap=Dot
+    [10] = ACTION_MODS_TAP_KEY(MOD_LCTL|MOD_LSFT|MOD_LALT, KC_BSLS),      // Hold=Ctrl+Alt+Shift, Tap=Backslash
     [11] = ACTION_MODS_TAP_KEY(MOD_LCTL|MOD_LALT, KC_ESC),                // Hold=Ctrl+Alt, Tap=Esc
     [12] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_MUTE),                        // Hold=Ctrl, Tap=Mute
     [13] = ACTION_MODS(MOD_LCTL|MOD_LSFT|MOD_LALT),                       // Ctrl+Shift+Alt
